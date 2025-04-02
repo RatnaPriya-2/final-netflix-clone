@@ -16,7 +16,7 @@ const MovieCards = ({ title, category }) => {
 
   useEffect(() => {
     fetchData(category);
-  }, []);
+  }, [category]);
 
   console.log(data);
   return (
