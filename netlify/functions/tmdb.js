@@ -7,7 +7,7 @@ exports.handler = async (event) => {
       `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=1`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.TMDB_KEY}`,
+          Authorization: process.env.TMDB_KEY,
         },
       }
     );
