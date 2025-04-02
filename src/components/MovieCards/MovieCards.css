@@ -1,0 +1,45 @@
+.movie-cards-container {
+  max-width: 100%;
+  margin-top: 100px;
+}
+
+.movie-cards-container h3 {
+  margin: 10px 0px;
+  font-size: 19px;
+  font-weight: 400;
+  text-shadow: 0px 0px 1px white;
+}
+
+.cards-list {
+  display: flex;
+  gap: 10px;
+  overflow: auto;
+}
+
+.cards-list .card-data {
+  width: 240px;
+}
+
+.cards-list .card-data img {
+  width: 240px;
+}
+
+.cards-list .card-data {
+  position: relative;
+}
+.cards-list .card-data p {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.cards-list::-webkit-scrollbar {
+  display: none;
+}
+
+.more-cards {
+  padding: 0 4%;
+}
+.more-cards .movie-cards-container {
+  margin-top: 40px;
+}

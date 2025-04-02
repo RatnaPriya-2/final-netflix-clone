@@ -1,0 +1,52 @@
+.footer-container {
+  padding: 0 4%;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  max-width: 1100px;
+  margin: 80px auto 20px;
+  color: gray;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.footer-icons img {
+  width: 26px;
+  height: 26px;
+}
+
+.footer-container ul {
+  list-style-type: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
+  /* grid-auto-rows: min-content; */
+  align-items: start;
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.footer-container ul li {
+  margin-bottom: 20px;
+}
+
+.footer-container button {
+  font-size: 13px;
+  margin-bottom: 20px;
+  padding: 8px;
+  color: gray;
+  background: transparent;
+  border: 1px solid gray;
+  outline: none;
+  cursor: pointer;
+}
+.footer-container button:hover {
+  color: white;
+}
+
+.copyright{
+  font-size:11px;
+}
