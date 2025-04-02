@@ -6,8 +6,6 @@ const AppProvider = ({ children }) => {
   const navRef = useRef(null);
   const movieCardsRef = useRef(null);
 
-  const [data, setData] = useState([]);
-
   useEffect(() => {
     const handleScroll = (e) => {
       if (navRef.current && window.scrollY === 0) {
@@ -27,11 +25,8 @@ const AppProvider = ({ children }) => {
     };
   }, []);
 
-  
-
   useEffect(() => {
     const handleWheel = (e) => {
-      // e.preventDefault();
       if (movieCardsRef.current) {
         movieCardsRef.current.scrollLeft += e.deltaY;
       }

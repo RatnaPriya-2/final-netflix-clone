@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import cards_data from "../../assets/cards/Cards_data";
+
 import "../../components/MovieCards/MovieCards.css";
 import { useGlobalContext } from "../../Context";
 
@@ -7,12 +7,12 @@ const MovieCards = ({ title, category }) => {
   const [data, setData] = useState([]);
   const { movieCardsRef } = useGlobalContext();
 
- const fetchData = (category) => {
-   fetch(`/api/movies/${category ? category : "now_playing"}`)
-     .then((res) => res.json())
-     .then((res) => setData(res))
-     .catch((err) => console.error(err));
- };
+  const fetchData = (category) => {
+    fetch(`/api/movies/${category ? category : "now_playing"}`)
+      .then((res) => res.json())
+      .then((res) => setData(res))
+      .catch((err) => console.error(err));
+  };
 
   useEffect(() => {
     fetchData(category);

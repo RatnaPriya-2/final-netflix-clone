@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo.png";
-import { Link } from "react-router-dom";
 import "../../pages/Login/Login.css";
 
 const Login = () => {
