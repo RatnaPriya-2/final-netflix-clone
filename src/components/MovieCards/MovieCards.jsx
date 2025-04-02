@@ -8,12 +8,11 @@ const MovieCards = ({ title, category }) => {
   const { movieCardsRef } = useGlobalContext();
 
   const fetchData = (category) => {
-    fetch(`/api/movies/${category ? category : "now_playing"}`)
+    fetch(`/.netlify/functions/tmdb?category=${category || ""}`)
       .then((res) => res.json())
-      .then((res) => setData(res))
+      .then((data) => setData(data))
       .catch((err) => console.error(err));
   };
-
   useEffect(() => {
     fetchData(category);
   }, [category]);
