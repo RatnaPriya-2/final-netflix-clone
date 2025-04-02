@@ -7,12 +7,17 @@ const MovieCards = ({ title, category }) => {
   const [data, setData] = useState([]);
   const { movieCardsRef } = useGlobalContext();
 
-  const fetchData = (category) => {
-    fetch(`/.netlify/functions/tmdb?category=${category || ""}`)
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((err) => console.error(err));
-  };
+ const fetchData = (category) => {
+   const API_KEY = process.env.REACT_APP_TMDB_KEY; // This will get the API key from the environment variables
+
+   fetch(
+     `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=1&api_key=${API_KEY}`
+   )
+     .then((res) => res.json())
+     .then((data) => setData(data.results))
+     .catch((err) => console.error(err));
+ };
+
   useEffect(() => {
     fetchData(category);
   }, [category]);

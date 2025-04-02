@@ -11,11 +11,15 @@ exports.handler = async (event) => {
         },
       }
     );
+
+    console.log("TMDB Response Data: ", data); // Add this line to log the response
+
     return {
       statusCode: 200,
-      body: JSON.stringify(data.results),
+      body: JSON.stringify(data.results), // This should return the movies
     };
   } catch (error) {
+    console.error("Error fetching data from TMDB: ", error); // Log the error
     return {
       statusCode: 500,
       body: JSON.stringify({ error: "Failed to fetch movies" }),
