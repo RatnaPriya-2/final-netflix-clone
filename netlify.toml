@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"     # Builds your React app
+  functions = "netlify/functions"  # Location of your TMDB proxy function
+  publish = "build"            # React's output folder
+
+  [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
