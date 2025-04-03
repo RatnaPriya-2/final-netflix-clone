@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../../components/MovieCards/MovieCards.css";
 
 const MovieCards = ({ title, endpoint }) => {
   const [data, setData] = useState([]);
@@ -19,12 +20,14 @@ const MovieCards = ({ title, endpoint }) => {
     if (endpoint) fetchMovies(endpoint);
   }, [endpoint]);
 
+  console.log(data);
+
   return (
-    <div>
+    <div className="movie-cards-container">
       <h3>{title}</h3>
-      <div className="movie-cards">
+      <div className="cards-list">
         {data.map((movie, index) => (
-          <div key={index} className="movie-card">
+          <div key={index} className="card-data">
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
               alt={movie.title || movie.name}

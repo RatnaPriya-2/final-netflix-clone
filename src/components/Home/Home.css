@@ -26,7 +26,7 @@
   margin-bottom: 20px;
 }
 
-.content p {
+.content .movie-desc {
   margin-bottom: 20px;
   font-size: 17px;
   max-width: 600px;
@@ -60,4 +60,10 @@
 }
 .btns .btn:hover {
   background-color: #ffffffbf;
+}
+
+.cards-list .card-data p {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
