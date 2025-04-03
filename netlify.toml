@@ -1,2 +1,2 @@
 [build]
-  functions = "netlify/functions"  # Points to your functions directory
+  functions = "./netlify/functions"

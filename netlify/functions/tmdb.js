@@ -1,25 +1,29 @@
 const axios = require("axios");
 
 exports.handler = async (event) => {
-  const category = event.queryStringParameters.category || "now_playing";
+  const key = process.env.REACT_APP_TMDB_KEY;
   try {
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=1`,
-      {
-        headers: {
-          Authorization: process.env.TMDB_KEY,
-        },
-      }
-    );
+    const { endpoint } = event.queryStringParameters;
 
-    console.log("TMDB Response Data: ", data); // Add this line to log the response
+    if (!endpoint) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Endpoint is required" }),
+      };
+    }
+
+    // Fixing the URL construction
+    const url = `https://api.themoviedb.org/3/${endpoint}?language=en-US&page=1&api_key=${key}`;
+
+    // Fetch data from TMDB API
+    const response = await axios.get(url);
 
     return {
       statusCode: 200,
-      body: JSON.stringify(data.results), // This should return the movies
+      body: JSON.stringify(response.data),
     };
   } catch (error) {
-    console.error("Error fetching data from TMDB: ", error); // Log the error
+    console.error("Error fetching data from TMDB:", error.message);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: "Failed to fetch movies" }),
