@@ -29,6 +29,11 @@
 .navbar .left-section ul li {
   cursor: pointer;
 }
+.navbar .left-section ul li a {
+  text-decoration:none;
+  color:white;
+  font-weight:300;
+}
 .navbar .right-section {
   display: flex;
   align-items: center;

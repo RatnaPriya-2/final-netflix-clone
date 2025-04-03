@@ -7,7 +7,11 @@ import { AppProvider } from "./Context";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Login from "./pages/Login/Login";
-
+import TvShows from "./pages/TvShows/TvShows";
+import Movies from "./pages/Movies/Movies";
+import NewAndPopular from "./pages/New&Popular/NewAndPopular";
+import BrowseByLanguages from "./pages/BrowseByLanguages/BrowseByLanguages";
+import MyList from "./pages/MyList/MyList";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +25,26 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/browsebylanguages",
+        element: <BrowseByLanguages />,
+      },
+      {
+        path: "/new&popular",
+        element: <NewAndPopular />,
+      },
+      {
+        path: "/movies",
+        element: <Movies />,
+      },
+      {
+        path: "/tvshows",
+        element: <TvShows />,
+      },
+      {
+        path: "/mylist",
+        element: <MyList />,
       },
     ],
   },

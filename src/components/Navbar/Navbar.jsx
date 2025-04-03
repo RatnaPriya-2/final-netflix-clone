@@ -6,6 +6,7 @@ import bellIcon from "../../assets/bell_icon.svg";
 import caretIcon from "../../assets/caret_icon.svg";
 import profileIcon from "../../assets/profile_img.png";
 import { useGlobalContext } from "../../Context";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { navRef } = useGlobalContext();
@@ -16,12 +17,24 @@ const Navbar = () => {
         <div className="left-section">
           <img src={logo} alt="logo" />
           <ul>
-            <li>Home</li>
-            <li>TV Shows</li>
-            <li>Movies</li>
-            <li>New & Popular</li>
-            <li>My List</li>
-            <li>Browse by Languages</li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/tvshows">TV Shows</Link>
+            </li>
+            <li>
+              <Link to="/movies">Movies</Link>
+            </li>
+            <li>
+              <Link to="/new&popular">New & Popular</Link>
+            </li>
+            <li>
+              <Link to="/mylist">My List</Link>
+            </li>
+            <li>
+              <Link to="browsebylanguages">Browse by Languages</Link>
+            </li>
           </ul>
         </div>
         <div className="right-section">
