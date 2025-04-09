@@ -31,6 +31,10 @@
 
 .footer-container ul li {
   margin-bottom: 20px;
+  text-decoration:underline;
+}
+.footer-container ul li:hover {
+  color:white;
 }
 
 .footer-container button {
@@ -47,6 +51,92 @@
   color: white;
 }
 
-.copyright{
-  font-size:11px;
+.copyright {
+  font-size: 11px;
+}
+
+/* Small Devices (up to 480px) */
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0 5%;
+    font-size: 13px;
+  }
+
+  .footer-container ul {
+    display: block;
+    font-size: 13px;
+  }
+
+  .footer-icons {
+    gap: 16px;
+  }
+
+  .footer-icons img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .footer-container button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .copyright {
+    font-size: 10px;
+  }
+}
+
+/* Medium Devices (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .footer-container ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, auto);
+    font-size: 14px;
+  }
+
+  .footer-container button {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+
+  .footer-icons img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Tablets and small laptops (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer-container ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-container button {
+    font-size: 13px;
+  }
+
+  .footer-icons img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Large Screens (1025px and above) */
+@media (min-width: 1025px) {
+  .footer-container {
+    padding: 0 4%;
+  }
+
+  .footer-container ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-container button {
+    font-size: 13px;
+  }
+
+  .footer-icons img {
+    width: 26px;
+    height: 26px;
+  }
 }

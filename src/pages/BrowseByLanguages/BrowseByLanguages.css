@@ -1,0 +1,139 @@
+.language-hero-container {
+  width: 100%;
+  padding: 0 5%;
+}
+
+.movie-language-cards-container {
+  max-width: 100%;
+  margin-top: 100px;
+}
+
+.filter-by-language {
+  display: flex;
+  gap: 20px;
+}
+
+.filter-cluster {
+  width: max-content;
+  padding: 5px 10px;
+  border: 1px solid white;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  background-color: transparent;
+}
+
+.filter-cluster:hover {
+  background-color: #4e4e4e;
+}
+
+.filter-cluster input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  flex: 1;
+  cursor: pointer;
+}
+.label-for-languages {
+  font-size: 26px;
+}
+
+.language-filter-cluster {
+  position: relative;
+}
+
+.language-filter-cluster ul {
+  list-style: none;
+  font-size: 14px;
+  border: 1px solid rgb(64, 64, 64);
+  background-color: rgba(0, 0, 0, 0.906);
+  max-height: 80%;
+  min-height: 0px;
+  opacity: 0;
+  overflow: auto;
+  transition: height 0.3s ease;
+  position: absolute;
+  top: 35px;
+  width: 100%;
+}
+.language-filter-cluster ul.open {
+  min-height: 600px;
+  opacity: 1;
+  z-index: 5;
+}
+.language-filter-cluster ul::-webkit-scrollbar {
+  width: 10px; /* Adjust the width of the scrollbar */
+}
+
+.language-filter-cluster ul::-webkit-scrollbar-thumb {
+  background-color: gray; /* Color of the scrollbar thumb */
+  border-radius: 0px; /* Rounded corners for the scrollbar */
+}
+
+.language-filter-cluster ul::-webkit-scrollbar-track {
+  background-color: rgb(50, 50, 50); /* Transparent background */
+}
+
+.language-filter-cluster ul::-webkit-scrollbar-button {
+  display: none; /* Remove arrow buttons at the ends */
+}
+
+.language-filter-cluster ul li {
+  padding: 3px 10px;
+  cursor: pointer;
+}
+.language-filter-cluster ul li:hover {
+  text-decoration: underline;
+}
+
+.movie-language-cards-container h3 {
+  margin: 10px 0px;
+  font-size: 19px;
+  font-weight: 400;
+  text-shadow: 0px 0px 1px white;
+}
+
+.movie-language-cards-container .cards-list {
+  display: flex;
+  column-gap: 15px;
+  row-gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 120px;
+}
+
+/* .movie-language-cards-container .cards-list .card-data {
+  width: 212px;
+  height: 120px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.movie-language-cards-container .cards-list .card-data img {
+  width: 212px;
+  height: 120px;
+} */
+
+.movie-language-cards-container .cards-list .card-data {
+  position: relative;
+}
+.movie-language-cards-container .cards-list .card-data p {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.movie-language-cards-container .cards-list::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-language-cards-container .more-cards {
+  padding: 0 4%;
+}
+.movie-language-cards-container .more-cards .movie-language-cards-container {
+  margin-top: 40px;
+}

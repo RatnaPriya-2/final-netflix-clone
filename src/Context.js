@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useRef } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 
 const AppContext = createContext();
 
@@ -39,7 +39,12 @@ const AppProvider = ({ children }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ navRef, movieCardsRef }}>
+    <AppContext.Provider
+      value={{
+        navRef,
+        movieCardsRef,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

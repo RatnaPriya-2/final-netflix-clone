@@ -1,0 +1,46 @@
+.player-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10% 5% 0%;
+}
+
+.back-icon {
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background-color:#e50914;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 80px;
+  left: 5%;
+  z-index: 2;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.back-icon:hover{
+  background-color:#ce0711;
+}
+
+.player-container iframe {
+  width: 100%;
+  height: 90vh;
+  border: none;
+}
+
+.player-info {
+  color: white;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

@@ -4,6 +4,7 @@
 
 .hero-banner {
   min-width: 100%;
+  height: 100%;
   mask-image: linear-gradient(to right, transparent, black 75%),
     linear-gradient(to top, transparent, black 90%);
   mask-composite: intersect;
@@ -11,25 +12,27 @@
 
 .hero {
   position: relative;
+  max-height: 500px;
 }
+
 .content {
   position: absolute;
-  bottom: 0;
+  top: 200px;
   max-width: 100%;
   z-index: 2;
   padding: 0 4%;
 }
 
-.title-img {
-  width: 90%;
-  max-width: 420px;
-  margin-bottom: 20px;
-}
-
 .content .movie-desc {
-  margin-bottom: 20px;
-  font-size: 17px;
+  margin-bottom: 25px;
+  font-size: 16px;
   max-width: 600px;
+}
+.content .movie-title {
+  margin-bottom: 20px;
+  font-size: 36px;
+  max-width: 400px;
+  text-shadow: 0px 0px 1px white;
 }
 
 .btns {
@@ -66,4 +69,105 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+
+.more-cards {
+  margin-top: 60px;
+}
+
+/* Default styles already provided */
+
+/* Small devices: up to 576px */
+@media (max-width: 576px) {
+  .content {
+    top: 130px;
+    padding: 0 4%;
+  }
+
+  .content .movie-title {
+    font-size: 22px;
+    max-width: 100%;
+  }
+
+  .content .movie-desc {
+    font-size: 14px;
+    max-width: 70%;
+  }
+
+  .btns .btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+  .more-cards {
+    margin-top: 80px;
+  }
+
+  .hero{
+    min-height:350px;
+  }
+}
+
+/* Medium devices: 577px to 768px */
+@media (min-width: 577px) and (max-width: 768px) {
+  .content {
+    top: 140px;
+    padding: 0 4%;
+  }
+
+  .content .movie-title {
+    font-size: 26px;
+    max-width: 80%;
+  }
+
+  .content .movie-desc {
+    font-size: 15px;
+    max-width: 70%;
+  }
+
+  .btns .btn {
+    font-size: 15px;
+    padding: 8px 20px;
+  }
+  .more-cards {
+    margin-top: 80px;
+  }
+}
+
+/* Large devices: 769px to 992px */
+@media (min-width: 769px) and (max-width: 992px) {
+  .content {
+    top: 160px;
+    padding: 0 4%;
+  }
+
+  .content .movie-title {
+    font-size: 30px;
+  }
+
+  .content .movie-desc {
+    font-size: 15px;
+  }
+  .content .movie-desc {
+    max-width: 70%;
+  }
+}
+
+/* Extra large devices: 993px and up */
+@media (min-width: 993px) {
+  .content {
+    top: 200px;
+    padding: 0 4%;
+  }
+
+  .content .movie-title {
+    font-size: 36px;
+  }
+
+  .content .movie-desc {
+    font-size: 16px;
+  }
+
+  .btns .btn {
+    font-size: 16px;
+  }
 }

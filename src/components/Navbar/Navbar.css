@@ -29,7 +29,7 @@
 .navbar .left-section ul li {
   cursor: pointer;
 }
-.navbar .left-section ul li a {
+.navbar .left-section ul li a,.right-section p a {
   text-decoration:none;
   color:white;
   font-weight:300;
@@ -59,6 +59,7 @@
   box-shadow: 0px 0px 2px gray;
   width: max-content;
   transition: all 0.3s ease;
+  background-color: rgba(24, 24, 24, 0.62);
 }
 .navbar .right-section .profile-cluster:hover .dropdown {
   opacity: 1;

@@ -1,0 +1,76 @@
+.stacked-navbar {
+  width: 100%;
+  padding: 10px 4%;
+  background: linear-gradient(to bottom, black 0%, transparent 100%);
+  color: white;
+  font-size: 14px;
+  z-index: 20;
+  position: fixed;
+}
+
+/* Top Row: Logo and Profile */
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-top .logo img {
+  height: 40px;
+}
+
+.navbar-top .profile-cluster {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.navbar-top .profile-cluster img {
+  height: 30px;
+  cursor: pointer;
+}
+
+.caret-icon{
+  width: 10px;
+}
+
+.navbar-top .profile-cluster .dropdown {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 8px;
+  background-color: rgba(24, 24, 24, 0.8);
+  box-shadow: 0 0 5px gray;
+  transition: all 0.3s ease;
+  text-decoration: underline;
+  font-size: 13px;
+  min-width:130px;
+}
+
+.navbar-top .profile-cluster:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Bottom Row: Nav Links */
+.navbar-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  padding: 10px 0 0;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #ccc;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: white;
+}

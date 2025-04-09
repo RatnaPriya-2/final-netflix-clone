@@ -3,7 +3,8 @@ const axios = require("axios");
 exports.handler = async (event) => {
   const key = process.env.REACT_APP_TMDB_KEY;
   try {
-    const { endpoint } = event.queryStringParameters;
+    const { endpoint, params } = event.queryStringParameters;
+    console.log("Received all params:", params);
 
     if (!endpoint) {
       return {
@@ -12,11 +13,24 @@ exports.handler = async (event) => {
       };
     }
 
-    // Fixing the URL construction
-    const url = `https://api.themoviedb.org/3/${endpoint}?language=en-US&page=1&api_key=${key}`;
+    // Construct additional params if provided
+    const additionalParams = params ? `${params}` : "";
+
+    
+    let url = `https://api.themoviedb.org/3/${endpoint}?api_key=${key}&${additionalParams}`;
+    console.log("url:", url);
 
     // Fetch data from TMDB API
-    const response = await axios.get(url);
+    let response = await axios.get(url);
+
+    // If no results are returned, try with page 1
+    if (!response.data.results || response.data.results.length === 0) {
+      console.log(
+        `No results found for page ${randomPage}. Falling back to page 1.`
+      );
+      url = `https://api.themoviedb.org/3/${endpoint}?language=en-US&page=1&api_key=${key}${additionalParams}`;
+      response = await axios.get(url);
+    }
 
     return {
       statusCode: 200,

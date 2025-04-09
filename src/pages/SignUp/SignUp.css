@@ -1,0 +1,531 @@
+/* Background image for the main area */
+html {
+  overflow-x: hidden;
+}
+.main-container {
+  background: linear-gradient(to bottom, black 0.2%, #1f1116 50%, black 100%);
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.background-img {
+  max-width: 95%;
+  height: 600px;
+  background-image: linear-gradient(#000000b1, #000000b1),
+    url("../../assets/background_banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  margin: 20px auto;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navbar styles */
+.signup-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 15px 10px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.language-tab {
+  display: flex;
+  align-items: center;
+  /* gap: 0.5rem; */
+  border: 1px solid red;
+  padding: 0px 10px;
+  border-radius: 20px;
+  border: 1px solid rgb(102, 102, 102);
+}
+
+.language-select {
+  padding: 8px;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  background: none;
+  color: white;
+  border: none;
+  outline: none;
+}
+.language-select option {
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+}
+
+.language-select option:hover {
+  background-color: #007bff; /* This may not work in all browsers */
+  color: white;
+}
+
+.sign-in-link {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  background-color: white;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.sign-in-link:hover {
+  background-color: #999;
+}
+
+.header-navs {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-around;
+  background-color: #23151c;
+  border-radius: 30px;
+  list-style-type: none;
+  max-width: max-content;
+  margin: 0 auto;
+  padding: 0px 30px;
+  box-shadow: 0px 0px 35px #2d1c25;
+}
+.header-navs a {
+  text-decoration: none;
+  color: rgb(199, 199, 199);
+}
+.header-navs li {
+  color: rgb(199, 199, 199);
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.header-navs a:hover {
+  color: white;
+}
+/* signup-hero section */
+.signup-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: max-content;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.signup-hero-content {
+  max-width: 650px;
+  /* border: 1px solid red; */
+}
+
+.content-heading .main-heading {
+  font-size: 3.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.content-para {
+  font-size: 22px;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.label-description {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Input + Button */
+.input-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0px;
+}
+
+.email-input-container {
+  position: relative;
+  flex: 1;
+}
+
+.email-field {
+  background: rgba(70, 70, 70, 0.838);
+  width: 100%;
+  padding: 20px 16px 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  border: 1px solid gray;
+  z-index: 200;
+  color: white;
+}
+
+.email-input-container label {
+  position: absolute;
+  left: 20px;
+  top: 16px;
+  color: rgb(199, 199, 199);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.email-input-container .email-field:focus + label,
+.email-input-container .email-field:not(:placeholder-shown) + label {
+  top: 8px;
+  font-size: 10px;
+}
+
+input:-internal-autofill-selected {
+  background-color: black !important;
+}
+
+/* Button styles */
+.get-started-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #e50914;
+  color: white;
+  padding: 13px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.get-started-button:hover {
+  background-color: rgb(193, 17, 25);
+}
+
+.button-link {
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive */
+
+/* Container-like behavior */
+.tile-cluster,
+.tile-cluster2 {
+  /* background-color: #000; */
+
+  color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Centered section heading */
+.section-heading {
+  font-size: 24px;
+  font-weight: 500;
+  /* text-align: center; */
+  margin: 40px 0 20px 0;
+}
+
+/* Mimicking Bootstrap's container */
+.tile-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Responsive columns similar to Bootstrap col-12 col-sm-6 col-lg-3 */
+.card-tile {
+  background: linear-gradient(180deg, #6c1f41 0%, #210d0e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.75rem;
+  padding: 30px 20px;
+  /* margin: 15px; */
+  flex: 1 0 100%;
+  max-width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.tile-cluster2 .card-tile {
+  background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
+}
+
+/* Hover effect */
+.card-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.08);
+}
+
+/* Card body layout */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Card content */
+.card-main-content {
+  margin-bottom: 20px;
+}
+
+/* Plan Title */
+.card-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* Plan description */
+.card-para {
+  font-size: 14px;
+  color: #aaa;
+  font-weight: 400;
+}
+
+/* Price text */
+.card-price {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: auto;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.after-faq-get-started .email-input {
+  max-width: 650px;
+  margin: 0 auto;
+  padding:0 20px;
+}
+
+#plans,
+#reasons,
+#faq {
+  padding: 0px 20px;
+}
+
+/* Extra Small devices (320px - very small phones) */
+@media (max-width: 359px) {
+  .signup-hero {
+    padding: 1rem;
+  }
+
+  .content-heading .main-heading {
+    font-size: 1.6rem;
+  }
+
+  .content-para {
+    font-size: 0.95rem;
+  }
+   .logo{
+    width:25px;
+    overflow:hidden;
+  }
+
+  .header-navs{
+    margin-top:20px;
+  }
+
+  .email-field,
+  .get-started-button {
+    font-size: 0.875rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .email-input-container label {
+    font-size: 12px;
+  }
+  .email-field,
+  .get-started-button {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .get-started-button {
+    margin-top: 10px;
+  }
+
+  .input-box {
+    display: block;
+  }
+
+  .header-navs li {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .card-title {
+    font-size: 0.9rem;
+  }
+
+  .card-para {
+    font-size: 0.85rem;
+  }
+
+  .card-price {
+    font-size: 1rem;
+  }
+}
+
+/* Small Phones (360px - 479px) */
+@media (min-width: 360px) and (max-width: 479px) {
+ 
+
+  .logo{
+    width:25px;
+    overflow:hidden;
+  }
+
+  .header-navs{
+    margin-top:20px;
+  }
+  .signup-hero {
+    padding: 1.5rem;
+  }
+
+  .content-heading .main-heading {
+    font-size: 1.9rem;
+  }
+
+  .content-para {
+    font-size: 1rem;
+  }
+
+  .email-field,
+  .get-started-button {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .get-started-button {
+    margin-top: 10px;
+  }
+
+  .input-box {
+    display: block;
+  }
+}
+
+/* Normal Mobile (480px - 575px) */
+@media (min-width: 480px) and (max-width: 575px) {
+  main .input-box {
+    padding: 0;
+  }
+
+  .signup-hero {
+    padding: 20px;
+  }
+
+  .content-heading .main-heading {
+    font-size: 2.1rem;
+  }
+
+  .content-para {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .card-tile {
+    flex: 1 0 48%;
+    max-width: 48%;
+  }
+
+  .input-box {
+    flex-direction: row;
+  }
+
+  .email-field,
+  .get-started-button {
+    width: 100%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .signup-hero {
+    padding: 3rem;
+  }
+
+  .signup-hero-content {
+    max-width: 85%;
+  }
+
+  .content-heading .main-heading {
+    font-size: 2.5rem;
+  }
+
+  .email-input-container label {
+    font-size: 13px;
+  }
+
+  .section-heading {
+    font-size: 26px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .card-tile {
+    flex: 1 0 22%;
+    max-width: 25%;
+  }
+
+  .signup-hero {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .content-heading .main-heading {
+    font-size: 3rem;
+  }
+
+  .content-para {
+    font-size: 20px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .signup-hero-content {
+    max-width: 650px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-para {
+    font-size: 1rem;
+  }
+
+  .card-price {
+    font-size: 1.2rem;
+  }
+}

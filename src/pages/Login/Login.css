@@ -18,7 +18,7 @@
   max-width: 450px;
   height: 730px;
   padding: 60px 64px;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 5px;
   margin: 20px auto;
 }
@@ -39,15 +39,16 @@
   height: 56px;
   border: 1px solid gray;
   border-radius: 4px;
-  padding: 0 15px;
+  padding: 24px 16px 8px;
   background: transparent;
   outline-offset: 3px;
+  color: white;
 }
 
 .login-form .input-cluster label {
   position: absolute;
-  top: 21px;
-  left: 20px;
+  top: 18px;
+  left: 16px;
   font-size: 14px;
   font-weight: 400;
   transition: all 0.3s ease;
@@ -55,7 +56,8 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-.login-form .input-cluster:focus-within label {
+.login-form .input-cluster input:focus + label,
+.login-form .input-cluster input:not(:placeholder-shown) + label {
   font-size: 11px;
   top: 10px;
 }
@@ -150,6 +152,8 @@ input[type="checkbox"]:checked:hover {
 }
 .new-to-netflix span {
   color: white;
+  text-decoration: underline;
+  cursor: pointer;
 }
 .captcha {
   font-size: 13px;
@@ -172,4 +176,120 @@ input[type="checkbox"]:checked:hover {
 .only-learn-more {
   color: rgb(68, 142, 244);
   text-decoration: underline;
+}
+
+/* Extra Small Devices (Phones, 320px and up) */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px 5%;
+  }
+
+  .login-logo {
+    width: 120px;
+  }
+
+  .login-form {
+    padding: 40px 24px;
+    height: auto;
+  }
+
+  .login-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .login-form input {
+    height: 48px;
+    font-size: 14px;
+  }
+
+  .sign-in-btn,
+  .sign-in-code-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .captcha,
+  .learn-more,
+  #learn-more-content,
+  .only-learn-more {
+    font-size: 12px;
+  }
+
+  .remember-cluster label {
+    font-size: 13px;
+  }
+
+  .new-to-netflix {
+    font-size: 13px;
+  }
+  input[type="checkbox"] {
+    height: 20px;
+  }
+}
+
+/* Small to Medium Devices (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .login-container {
+    padding: 20px 8%;
+  }
+
+  .login-form {
+    padding: 50px 40px;
+    height: auto;
+  }
+
+  .login-form h2 {
+    font-size: 28px;
+  }
+
+  .sign-in-btn,
+  .sign-in-code-btn {
+    font-size: 15px;
+  }
+
+  .login-form input {
+    height: 50px;
+  }
+  input[type="checkbox"] {
+    height: 20px;
+  }
+}
+
+/* Medium to Large Devices (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .login-container {
+    padding: 20px 10%;
+  }
+
+  .login-form {
+    padding: 60px 48px;
+  }
+
+  .login-form h2 {
+    font-size: 30px;
+  }
+
+  .login-form input {
+    height: 56px;
+    font-size: 15px;
+  }
+  input[type="checkbox"] {
+    height: 20px;
+  }
+}
+
+/* Large Devices (1025px and up) */
+@media (min-width: 1025px) {
+  .login-container {
+    padding: 20px 12%;
+  }
+
+  .login-form {
+    max-width: 450px;
+    padding: 60px 64px;
+  }
+  input[type="checkbox"] {
+    height: 20px;
+  }
 }

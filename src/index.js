@@ -12,40 +12,35 @@ import Movies from "./pages/Movies/Movies";
 import NewAndPopular from "./pages/New&Popular/NewAndPopular";
 import BrowseByLanguages from "./pages/BrowseByLanguages/BrowseByLanguages";
 import MyList from "./pages/MyList/MyList";
+import Player from "./components/Player/Player";
+import Children from "./pages/Children/Children";
+import SignUp from "./pages/SignUp/SignUp";
+import SimpleLayout from "./SimpleLayout";
+import SignUp2 from "./pages/SignUp/SignUp2";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <App />, // Layout with Nav + Footer
     children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/browsebylanguages",
-        element: <BrowseByLanguages />,
-      },
-      {
-        path: "/new&popular",
-        element: <NewAndPopular />,
-      },
-      {
-        path: "/movies",
-        element: <Movies />,
-      },
-      {
-        path: "/tvshows",
-        element: <TvShows />,
-      },
-      {
-        path: "/mylist",
-        element: <MyList />,
-      },
+      { index: true, element: <Home /> },
+      { path: "/tvshows", element: <TvShows /> },
+      { path: "/movies", element: <Movies /> },
+      { path: "/new&popular", element: <NewAndPopular /> },
+      { path: "/browsebylanguages", element: <BrowseByLanguages /> },
+      { path: "/mylist", element: <MyList /> },
+      { path: "/children", element: <Children /> },
+      { path: "/player/:media_type/:id", element: <Player /> },
+    ],
+  },
+  {
+    path: "/",
+    element: <SimpleLayout />, // Layout without Nav
+    children: [
+      { path: "/", element: <SignUp /> },
+      { path: "login", element: <Login /> },
+      { path: "signup", element: <SignUp /> },
+      { path: "signup2", element: <SignUp2 /> },
     ],
   },
 ]);

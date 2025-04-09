@@ -1,0 +1,107 @@
+.hero-container {
+  width: 100%;
+  position: relative;
+}
+
+.filter-by-genre {
+  display: flex;
+  gap: 20px;
+  padding: 0 4%;
+  position: absolute;
+  top: 100px;
+  z-index: 10;
+}
+
+.filter-cluster {
+  padding: 5px 10px;
+  border: 1px solid white;
+  max-width: 250px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  background-color: transparent;
+}
+
+.filter-cluster:hover {
+  background-color: #4e4e4e;
+}
+
+.filter-cluster input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  flex: 1;
+  cursor: pointer;
+}
+.label-for-genre {
+  font-size: 26px;
+}
+
+.genre-filter-cluster {
+  position: relative;
+}
+
+.genre-filter-cluster ul {
+  list-style: none;
+  font-size: 14px;
+  border: 1px solid rgb(64, 64, 64);
+  background-color: rgba(0, 0, 0, 0.906);
+  max-height: 80%;
+  min-height: 0px;
+  opacity: 0;
+  overflow: auto;
+  transition: height 0.3s ease;
+  position: absolute;
+  top: 35px;
+  width: 100%;
+}
+.genre-filter-cluster ul.open {
+  min-height: 200px;
+  opacity: 1;
+  z-index: 5;
+}
+.genre-filter-cluster ul::-webkit-scrollbar {
+  width: 10px; /* Adjust the width of the scrollbar */
+}
+
+.genre-filter-cluster ul::-webkit-scrollbar-thumb {
+  background-color: gray; /* Color of the scrollbar thumb */
+  border-radius: 0px; /* Rounded corners for the scrollbar */
+}
+
+.genre-filter-cluster ul::-webkit-scrollbar-track {
+  background-color: rgb(50, 50, 50); /* Transparent background */
+}
+
+.genre-filter-cluster ul::-webkit-scrollbar-button {
+  display: none; /* Remove arrow buttons at the ends */
+}
+
+.genre-filter-cluster ul li {
+  padding: 3px 10px;
+  cursor: pointer;
+}
+.genre-filter-cluster ul li:hover {
+  text-decoration: underline;
+}
+
+.movie-genre-cards-container h3 {
+  margin: 10px 0px;
+  font-size: 19px;
+  font-weight: 400;
+  text-shadow: 0px 0px 1px white;
+}
+
+@media (max-width: 768px) {
+  .filter-by-genre {
+    top: 60px;
+    margin: 20px 0px;
+  }
+  .filter-by-genre .label-for-genre {
+    display: none;
+  }
+}

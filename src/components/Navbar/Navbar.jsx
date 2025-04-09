@@ -6,16 +6,29 @@ import bellIcon from "../../assets/bell_icon.svg";
 import caretIcon from "../../assets/caret_icon.svg";
 import profileIcon from "../../assets/profile_img.png";
 import { useGlobalContext } from "../../Context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { signOutFromSite } from "../../Firebase/Firebase";
 
 const Navbar = () => {
   const { navRef } = useGlobalContext();
+  const navigate = useNavigate();
+  const handleSignOut = async () => {
+    try {
+      await signOutFromSite();
+      setTimeout(() => navigate("/login"), 1000);
+    } catch (error) {
+      setTimeout(() => navigate("/home"), 1000);
+    }
+  };
 
   return (
     <>
       <div className="navbar" ref={navRef}>
         <div className="left-section">
-          <img src={logo} alt="logo" />
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
+
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -33,18 +46,22 @@ const Navbar = () => {
               <Link to="/mylist">My List</Link>
             </li>
             <li>
-              <Link to="browsebylanguages">Browse by Languages</Link>
+              <Link to="/browsebylanguages">Browse by Languages</Link>
             </li>
           </ul>
         </div>
         <div className="right-section">
           <img src={searchIcon} alt="search-icon" />
-          <p>Children</p>
+          <p>
+            <Link to="/children">Children</Link>
+          </p>
           <img src={bellIcon} alt="bell-icon" />
           <div className="profile-cluster">
             <img src={profileIcon} alt="profile-icon" />
             <img src={caretIcon} alt="caret-icon" />
-            <p className="dropdown">Sign in to Netflix</p>
+            <p className="dropdown" onClick={handleSignOut}>
+              Sign out of Netflix
+            </p>
           </div>
         </div>
       </div>
