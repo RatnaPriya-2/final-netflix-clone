@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import netflixFAQs from "../../netflixFAQ";
 import "../FAQ/FAQ.css";
 

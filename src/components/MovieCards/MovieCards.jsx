@@ -17,7 +17,6 @@ const MovieCards = ({ title, endpoint, params }) => {
       );
       const result = await response.json();
 
-      // Infer media_type based on endpoint
       const mediaType = endpoint.includes("movie")
         ? "movie"
         : endpoint.includes("tv")

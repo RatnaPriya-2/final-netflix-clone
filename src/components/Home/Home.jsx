@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import "../../components/Home/Home.css";
 import MovieCards from "../MovieCards/MovieCards";
-import heroBanner from "../../assets/hero_banner.jpg";
 
 import Hero from "../Hero/Hero";
 import Loading from "../Loading/Loading";

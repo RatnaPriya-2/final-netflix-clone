@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import logo from "../../assets/logo.png";
 import "../../pages/Login/Login.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { loginToSite } from "../../Firebase/Firebase";
 import { toast } from "react-toastify";
 

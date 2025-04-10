@@ -1,3 +1,7 @@
+html{
+  overflow-x:hidden;
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -11,6 +15,7 @@
   z-index: 20;
   background: linear-gradient(to bottom, black 0%, transparent 100%);
   background-size: 100% 0%;
+  box-sizing: border-box;
 }
 
 .navbar .left-section {
@@ -26,13 +31,56 @@
   display: flex;
   gap: 20px;
 }
+
+.short-nav-links {
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar .left-section .short-nav-links ul {
+  flex-direction: column;
+  border: 1px solid rgb(58, 58, 58);
+  position: absolute;
+  top: 130%;
+  left: -20px;
+  width: 150px;
+  gap: 0px;
+  z-index: 1000;
+  background-color: #141414;
+  display: none;
+}
+.navbar .left-section .short-nav-links.show ul {
+  display: flex;
+}
+.main-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  width: 150px;
+  margin-left: 20px;
+}
+.main-link.show {
+  display: flex;
+}
+
+.short-nav-links ul li {
+  padding: 14px 0px;
+  text-align: center;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+.short-nav-links ul li:hover {
+  background-color: black;
+}
 .navbar .left-section ul li {
   cursor: pointer;
 }
-.navbar .left-section ul li a,.right-section p a {
-  text-decoration:none;
-  color:white;
-  font-weight:300;
+.navbar .left-section ul li a,
+.right-section p a {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
 }
 .navbar .right-section {
   display: flex;
@@ -64,4 +112,15 @@
 .navbar .right-section .profile-cluster:hover .dropdown {
   opacity: 1;
   visibility: visible;
+}
+
+.navbar .left-section .short-nav-links .caret-icon {
+  width: 12px;
+}
+
+@media (max-width: 370px) {
+  .main-link {
+    margin-left: 0px;
+    width: 140px;
+  }
 }

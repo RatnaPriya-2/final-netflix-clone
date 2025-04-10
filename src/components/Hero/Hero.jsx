@@ -3,7 +3,7 @@ import "../../components/Home/Home.css";
 
 import infoIcon from "../../assets/info_icon.png";
 import playIcon from "../../assets/play_icon.png";
-import Loading from "../Loading/Loading";
+
 import { useNavigate } from "react-router-dom";
 
 const Hero = (props) => {

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import "./App.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { AppProvider } from "./Context";
@@ -21,9 +22,19 @@ import SignUp2 from "./pages/SignUp/SignUp2";
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <SimpleLayout />, // Layout without Nav
+    children: [
+      { path: "/", element: <SignUp /> },
+      { path: "/login", element: <Login /> },
+      { path: "/signup", element: <SignUp /> },
+      { path: "/signup2", element: <SignUp2 /> },
+    ],
+  },
+  {
+    path: "/",
     element: <App />, // Layout with Nav + Footer
     children: [
-      { index: true, element: <Home /> },
+      { path: "/home", element: <Home /> },
       { path: "/tvshows", element: <TvShows /> },
       { path: "/movies", element: <Movies /> },
       { path: "/new&popular", element: <NewAndPopular /> },
@@ -31,16 +42,6 @@ const router = createBrowserRouter([
       { path: "/mylist", element: <MyList /> },
       { path: "/children", element: <Children /> },
       { path: "/player/:media_type/:id", element: <Player /> },
-    ],
-  },
-  {
-    path: "/",
-    element: <SimpleLayout />, // Layout without Nav
-    children: [
-      { path: "/", element: <SignUp /> },
-      { path: "login", element: <Login /> },
-      { path: "signup", element: <SignUp /> },
-      { path: "signup2", element: <SignUp2 /> },
     ],
   },
 ]);

@@ -3,7 +3,7 @@ import logo from "../../assets/logo.png";
 import "../../pages/Login/Login.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { signUpToSite } from "../../Firebase/Firebase";
-import { toast } from "react-toastify";
+
 import SpinnerLoading from "../../components/SpinnerLoading/SpinnerLoading";
 
 const SignUp2 = () => {

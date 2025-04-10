@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import MovieCards from "../../components/MovieCards/MovieCards";
 import Loading from "../../components/Loading/Loading";
 import Top10Cards from "../../components/Top10Cards/Top10Cards";
 import Cards from "../../components/Cards/Cards";
-import "../../pages/New&Popular/NewAndPopular.css"
+import "../../pages/New&Popular/NewAndPopular.css";
 
 const NewAndPopular = () => {
   const [loading, setLoading] = useState(true);

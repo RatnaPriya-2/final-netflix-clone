@@ -52,6 +52,7 @@ const MyList = () => {
   return (
     <div className="language-hero-container">
       <div className="movie-language-cards-container">
+        <p className="mylist-heading">My List</p>
         <div className="cards-list">
           {data
             .filter((movie) => movie.backdrop_path)
