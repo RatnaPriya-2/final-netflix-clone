@@ -2,9 +2,10 @@
   display: flex;
   min-width: 240px;
   position: relative;
-  justify-content:flex-end;
-  overflow:hidden;
-  /* border:1px solid red; */
+  justify-content: flex-end;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .card-content img {
@@ -15,22 +16,22 @@
 .card-content .number-img {
   position: absolute;
   left: 15%;
-  z-index:0;
+  z-index: 0;
 }
 
 .card-content .poster-img {
-  z-index:20;
+  z-index: 20;
 }
 
-.tvshows-container{
-  margin-top:40px;
+.tvshows-container {
+  margin-top: 40px;
 }
 
 .movies-container .cards-list .card-content:nth-child(1) .number-img {
- left:30%;
- height:160px;
+  left: 30%;
+  height: 160px;
 }
 .tvshows-container .cards-list .card-content:nth-child(1) .number-img {
- left:30%;
- height:160px;
+  left: 30%;
+  height: 160px;
 }

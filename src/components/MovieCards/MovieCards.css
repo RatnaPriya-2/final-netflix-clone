@@ -23,7 +23,10 @@
   border-radius: 4px;
   overflow: hidden;
   position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer; 
 }
+
 
 .card-data img {
   width: 240px;
