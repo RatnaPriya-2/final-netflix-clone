@@ -9,31 +9,31 @@ const Player = () => {
 
   const navigate = useNavigate();
 
-  const fetchTrailer = async (id) => {
-    setLoading(true); // ✅ start loading
-    try {
-      const response = await fetch(
-        `/.netlify/functions/tmdb?endpoint=${encodeURIComponent(
-          `${media_type}/${id}/videos`
-        )}`
-      );
-
-      const data = await response.json();
-      const trailerData = data.results.find(
-        (trailer) => trailer.type === "Trailer" && trailer.site === "YouTube"
-      );
-
-      setTrailer(trailerData || null);
-    } catch (error) {
-      console.error("Error fetching trailer:", error);
-      setTrailer(null);
-    }
-    setLoading(false); // ✅ stop loading
-  };
-
   useEffect(() => {
-    fetchTrailer(id);
-  }, [id]);
+    const fetchTrailer = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          `/.netlify/functions/tmdb?endpoint=${encodeURIComponent(
+            `${media_type}/${id}/videos`
+          )}`
+        );
+
+        const data = await response.json();
+        const trailerData = data.results.find(
+          (trailer) => trailer.type === "Trailer" && trailer.site === "YouTube"
+        );
+
+        setTrailer(trailerData || null);
+      } catch (error) {
+        console.error("Error fetching trailer:", error);
+        setTrailer(null);
+      }
+      setLoading(false);
+    };
+
+    fetchTrailer();
+  }, [id, media_type]); // ✅ include both dependencies
 
   return (
     <div className="player-container">

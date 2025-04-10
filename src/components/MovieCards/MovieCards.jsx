@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 const MovieCards = ({ title, endpoint, params }) => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
 
@@ -29,7 +28,6 @@ const MovieCards = ({ title, endpoint, params }) => {
       }));
 
       setData(resultsWithType);
-      setLoading(false);
     } catch (error) {
       console.error("Error fetching movies:", error);
     }
