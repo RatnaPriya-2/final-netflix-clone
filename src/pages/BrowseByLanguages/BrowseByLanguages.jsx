@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import movieLanguages from "../../languageData";
 import Loading from "../../components/Loading/Loading";
@@ -22,22 +22,25 @@ const BrowseByLanguages = () => {
     setLanguage(language);
   };
 
-  const fetchMovies = async (pageNumber) => {
-    try {
-      const paramsString = encodeURIComponent(
-        `with_original_language=${language.originalCode}&sort_by=popularity.desc&page=${pageNumber}&include_adult=false`
-      );
+  const fetchMovies = useCallback(
+    async (pageNumber) => {
+      try {
+        const paramsString = encodeURIComponent(
+          `with_original_language=${language.originalCode}&sort_by=popularity.desc&page=${pageNumber}&include_adult=false`
+        );
 
-      const response = await fetch(
-        `/.netlify/functions/tmdb?endpoint=discover/movie&params=${paramsString}`
-      );
+        const response = await fetch(
+          `/.netlify/functions/tmdb?endpoint=discover/movie&params=${paramsString}`
+        );
 
-      const data = await response.json();
-      return data.results;
-    } catch (error) {
-      console.error("Error fetching movies:", error);
-    }
-  };
+        const data = await response.json();
+        return data.results;
+      } catch (error) {
+        console.error("Error fetching movies:", error);
+      }
+    },
+    [language]
+  );
 
   useEffect(() => {
     const fetch100Movies = async () => {
@@ -56,7 +59,7 @@ const BrowseByLanguages = () => {
     };
 
     fetch100Movies();
-  }, [language]);
+  }, [language, fetchMovies]);
 
   if (loading) {
     return <Loading />;
