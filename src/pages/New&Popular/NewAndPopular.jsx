@@ -24,31 +24,31 @@ const NewAndPopular = () => {
     }
   };
 
-  const fetch100MoviesByPopular = async () => {
-    setLoading(true);
-    let moviesList = [];
-
-    for (let i = 1; i <= 5; i++) {
-      let movies = await fetchMoviesByPopular(i);
-      if (movies) {
-        moviesList.push(...movies);
-      }
-    }
-
-    setData(moviesList);
-    setLoading(false);
-  };
   useEffect(() => {
+    const fetch100MoviesByPopular = async () => {
+      setLoading(true);
+      let moviesList = [];
+
+      for (let i = 1; i <= 5; i++) {
+        let movies = await fetchMoviesByPopular(i);
+        if (movies) {
+          moviesList.push(...movies);
+        }
+      }
+
+      setData(moviesList);
+      setLoading(false);
+    };
     fetch100MoviesByPopular();
   }, []);
 
   useEffect(() => {
     const id = setTimeout(() => {
       setLoading(false);
-    }, 3000); // Move 3000 inside setTimeout
+    }, 2000);
 
     return () => clearTimeout(id);
-  }, []); // Empty dependency array
+  }, []);
 
   return (
     <>

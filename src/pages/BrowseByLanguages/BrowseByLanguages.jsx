@@ -39,22 +39,22 @@ const BrowseByLanguages = () => {
     }
   };
 
-  const fetch100Movies = async () => {
-    setLoading(true);
-    let moviesList = [];
-
-    for (let i = 1; i <= 5; i++) {
-      let movies = await fetchMovies(i);
-      if (movies) {
-        moviesList.push(...movies);
-      }
-    }
-
-    setData(moviesList);
-    setLoading(false);
-  };
-
   useEffect(() => {
+    const fetch100Movies = async () => {
+      setLoading(true);
+      let moviesList = [];
+
+      for (let i = 1; i <= 5; i++) {
+        let movies = await fetchMovies(i);
+        if (movies) {
+          moviesList.push(...movies);
+        }
+      }
+
+      setData(moviesList);
+      setLoading(false);
+    };
+
     fetch100Movies();
   }, [language]);
 

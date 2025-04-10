@@ -25,24 +25,25 @@ const Children = () => {
     }
   };
 
-  const fetch100Movies = async () => {
-    setLoading(true);
-    let moviesList = [];
+ useEffect(() => {
+   const fetch100Movies = async () => {
+     setLoading(true);
+     let moviesList = [];
 
-    for (let i = 4; i <= 8; i++) {
-      let movies = await fetchMovies(i);
-      if (movies) {
-        moviesList.push(...movies);
-      }
-    }
+     for (let i = 4; i <= 8; i++) {
+       let movies = await fetchMovies(i);
+       if (movies) {
+         moviesList.push(...movies);
+       }
+     }
 
-    setData(moviesList);
-    setLoading(false);
-  };
+     setData(moviesList);
+     setLoading(false);
+   };
 
-  useEffect(() => {
-    fetch100Movies();
-  }, []);
+   fetch100Movies();
+ }, []);
+
 
   if (loading) {
     return <Loading />;

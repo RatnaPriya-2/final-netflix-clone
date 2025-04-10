@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Hero from "../../components/Hero/Hero";
 import MovieCards from "../../components/MovieCards/MovieCards";
 import Loading from "../../components/Loading/Loading";
@@ -15,6 +15,7 @@ const Movies = () => {
   const [genre, setGenre] = useState("Genre");
   const [selectedGenreHero, setSelectedGenreHero] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+   const [heroData, setHeroData] = useState(null);
 
   const handleGenreList = (genre) => {
     setIsOpen(!isOpen);
@@ -24,12 +25,12 @@ const Movies = () => {
   useEffect(() => {
     const id = setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(id);
   }, []);
 
-  const fetchMoviesByGenre = async (pageNumber) => {
+  const fetchMoviesByGenre = useCallback(async (pageNumber) => {
     try {
       const paramsString = encodeURIComponent(
         `with_genres=${genre.id}&page=${pageNumber}&include_adult=false`
@@ -44,9 +45,9 @@ const Movies = () => {
     } catch (error) {
       console.error("Error fetching movies by genre:", error);
     }
-  };
+  },[genre])
 
-  const fetch100MoviesByGenre = async () => {
+  const fetch100MoviesByGenre = useCallback(async () => {
     setLoading(true);
     let moviesList = [];
 
@@ -67,10 +68,10 @@ const Movies = () => {
       setSelectedGenreHero(moviesList[randomIndex]);
     }
     setLoading(false);
-  };
-  const [heroData, setHeroData] = useState(null);
+  }, [fetchMoviesByGenre]);
+ 
 
-  const fetchHeroMovie = async () => {
+  const fetchHeroMovie = useCallback(async () => {
     try {
       const response = await fetch(
         `/.netlify/functions/tmdb?endpoint=movie/popular`
@@ -83,17 +84,17 @@ const Movies = () => {
     } catch (error) {
       console.error("Error fetching movies:", error);
     }
-  };
+  },[]);
 
   useEffect(() => {
     fetchHeroMovie();
-  }, []);
+  }, [fetchHeroMovie]);
 
   useEffect(() => {
     fetch100MoviesByGenre();
-  }, [genre]);
+  }, [genre, fetch100MoviesByGenre]);
 
-  console.log(genre);
+  
 
   return (
     <>
